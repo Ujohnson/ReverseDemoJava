@@ -21,21 +21,61 @@ class Reverse {
 	}
 
 
-	public String reverseR() {
+	// public String reverseR() {
 
-		if (num < length) {
+	// 	if (num < length) {
 
-			newChars[num] = newString.charAt(length-1 - num); 
-			num++;
-			reverseR();
-		} 
+	// 		newChars[num] = newString.charAt(length-1 - num); 
+	// 		num++;
+	// 		reverseR();
+	// 	} 
 
-		String newnewString = new String(newChars);
+	// 	String newnewString = new String(newChars);
 
 
-		//System.out.print(newnewString);
+	// 	//System.out.print(newnewString);
 
-		return newnewString;
+	// 	return newnewString;
+	// }
+
+	public String reverseR(String x, String j) {
+		
+		String k;
+
+		if (j.length() == x.length()) {
+				return j;
+			}
+
+
+		k = "";
+
+		if (j.length() < x.length()) {
+			
+			String p = j + x.substring(x.length() - j.length() - 1, x.length() - j.length());
+
+			
+			k = reverseR(x, p);
+
+			//System.out.println(j); 
+
+			// return k;
+
+
+
+		}
+
+		// else if (j.length() <= x.length()) {
+			
+		// 	k = reverseR(x, j);
+		// }
+
+		return k;
+
+		// String k = j + x.substring(0, 1);
+
+		// return ;
+
+
 	}
 
 	public String reverseI(String x) {
@@ -80,9 +120,9 @@ class ReverseDemo {
 
 		Reverse ob = new Reverse(args[0]);
 
-		System.out.println(ob.reverseI(args[0]));
+		//System.out.println(ob.reverseI(args[0]));
 
-		System.out.println(ob.reverseR());
+		System.out.println(ob.reverseR(args[0], ""));
 
 	}
 }
