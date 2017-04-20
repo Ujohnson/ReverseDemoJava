@@ -1,7 +1,41 @@
 class Reverse {
 
-	public void reverseR() {
+	private char newChars[];
 
+	String newString;
+
+	int num;
+
+	int length;
+
+	Reverse(String x) {
+		
+		newString = x;
+
+		num = 0;
+
+		length = x.length(); 
+
+		newChars = new char[length];
+
+	}
+
+
+	public String reverseR() {
+
+		if (num < length) {
+
+			newChars[num] = newString.charAt(length-1 - num); 
+			num++;
+			reverseR();
+		} 
+
+		String newnewString = new String(newChars);
+
+
+		//System.out.print(newnewString);
+
+		return newnewString;
 	}
 
 	public String reverseI(String x) {
@@ -43,9 +77,12 @@ class ReverseDemo {
 
 	public static void main(String[] args) {
 		
-		Reverse ob = new Reverse();
 
-		System.out.println(ob.reverseI("Hello"));
+		Reverse ob = new Reverse(args[0]);
+
+		System.out.println(ob.reverseI(args[0]));
+
+		System.out.println(ob.reverseR());
 
 	}
 }
