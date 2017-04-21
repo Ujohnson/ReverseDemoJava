@@ -40,27 +40,24 @@ class Reverse {
 
 	public String reverseR(String x, String j) {
 		
-		String k;
+		//String k;
 
 		if (j.length() == x.length()) {
 				return j;
 			}
 
-
-		k = "";
+		//k = "";
 
 		if (j.length() < x.length()) {
 			
 			String p = j + x.substring(x.length() - j.length() - 1, x.length() - j.length());
 
 			
-			k = reverseR(x, p);
+			j = reverseR(x, p);
 
 			//System.out.println(j); 
 
 			// return k;
-
-
 
 		}
 
@@ -69,7 +66,7 @@ class Reverse {
 		// 	k = reverseR(x, j);
 		// }
 
-		return k;
+		return j;
 
 		// String k = j + x.substring(0, 1);
 
